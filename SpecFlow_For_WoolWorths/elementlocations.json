@@ -1,0 +1,38 @@
+{
+  "gui_locations": {
+    "browse.product_section": "cdx-card",
+    "browse.product_add_trolley_button_text": "Add to trolley",
+    "browse.product_plus_count_button": "//cdx-svg-icon[@name='plus']/..",
+    "browse.product_minus_count_button": "//cdx-svg-icon[@name='minus']/..",
+    "homepage.url": "https://www.woolworths.co.nz/",
+    "homepage.main_logo_location_classname": ".site-link",
+    "homepage.login_popup_menu": "//cdx-popup[@popupid='quickNavSignInPopup']/button",
+    "homepage.login_menu_path": "Sign in or Register/Sign In",
+    "homepage.login_hello_text": "Kia ora",
+    "homepage.trolley_button_location": "//global-nav-basket-totals/a[@href='/reviewtrolley']",
+    "homepage.special_price_menu_path": "Specials & offers/Specials & offers",
+    "homepage.low_price_menu_path": "Low Price",
+    "loginpage.email_input_location": "//input[@id='emailInput']",
+    "loginpage.email_continue_button_text": "Continue",
+    "loginpage.password_input_location": "//input[@id='password']",
+    "loginpage.password_sign_button_text": "Sign in",
+    "trolleypage.product_section": "product-stamp-list",
+    "trolleypage.product_plus_count_button": "//cdx-svg-icon[@name='plus']/..",
+    "trolleypage.product_minus_count_button": "//cdx-svg-icon[@name='minus']/..",
+    "trolleypage.product_add_confirm_button_text": "Add",
+    "trolleypage.product_remove_button": "Remove",
+    "trolleypage.product_clear_button_text": "Clear trolley",
+    "trolleypage.product_clear_confirm_button_text": "Yes, clear trolley",
+    "trolleypage.product_name_location": "//a[@routerlink='/shop/productdetails']/h2",
+    "trolleypage.product_quantity_input": "//product-quantity-selector//input",
+    "trolleypage.product_saving_classname": ".product-savings",
+    "trolleypage.product_single_total_price_text": "Item total:",
+    "trolleypage.product_single_total_price_tagname": "//strong",
+    "trolleypage.product_single_unit_average_location": "//product-price-single-unit-average/p[@aria-label]",
+    "trolleypage.product_choose_checkbox": "//input[@type='checkbox']",
+    "trolleypage.product_price_location": "//product-price/span[@aria-label]",
+    "trolleypage.product_total_price": "//wnz-trolley-row-total[@data-cy='subtotal']",
+    "trolleypage.product_total_price_classname": ".totals-value"
+  }
+
+}

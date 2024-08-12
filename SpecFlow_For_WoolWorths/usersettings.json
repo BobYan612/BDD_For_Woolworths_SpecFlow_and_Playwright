@@ -1,0 +1,9 @@
+{
+  "user_settings": {
+    "searching_timeout": "30000",
+    "test_with_headless": "false",
+    "browse_type": "Chromium",
+    "username": "xxx",
+    "password": "xxx"
+  }
+}
