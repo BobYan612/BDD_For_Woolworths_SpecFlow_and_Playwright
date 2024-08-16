@@ -35,7 +35,6 @@ The project has implememnted and verified 5 test scenarios beased on the Trolley
  
  **Test Report**  
    
- [report link](test_result/LivingDoc.html)  
    
  ![Report Example](test_result/test_report.JPG)  
  
