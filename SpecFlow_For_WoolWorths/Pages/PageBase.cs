@@ -71,30 +71,60 @@ namespace PlaywrightTest.pages
         /// <param name="searchType">Only supports: xpath/css/id/text</param>
         /// <returns>ILocator object</returns>
         /// <exception cref="NotImplementedException">Exception for undefined type</exception>
-        public async Task<ILocator> LocateElement(string locationDefine, string searchType = SearchType.XPath)
+        public async Task<ILocator> LocateElement(string locationDefine, string searchType = SearchType.XPath, bool needWait = true, bool isVisible = true)
         {
             ILocator locator;        
             
             switch(searchType)
             {
                 case SearchType.XPath:
-                    locator = _page.Locator("xpath=" + locationDefine).Locator("visible=true").Last;
+                    if (isVisible)
+                    {
+                        locator = _page.Locator("xpath=" + locationDefine).Locator("visible=true").Last;
+                    } 
+                    else
+                    {
+                        locator = _page.Locator("xpath=" + locationDefine).Last;
+                    }
                     break;
                 case SearchType.Text:
                     string matchPattern = @"^\s*" + locationDefine + @"\s*$";
                     Regex matchRegex = new Regex(matchPattern, RegexOptions.IgnoreCase);
-                    locator = _page.GetByText(matchRegex).Locator("visible=true").Last;
+                    if (isVisible)
+                    {
+                        locator = _page.GetByText(matchRegex).Locator("visible=true").Last;
+                    }
+                    else
+                    {
+                        locator = _page.GetByText(matchRegex).Last;
+                    }
+                    
                     break;
-                case SearchType.ID:
-                    locator = _page.GetByTestId(locationDefine).Locator("visible=true").Last;
+                case SearchType.ID:                    
+                    if (isVisible)
+                    {
+                        locator = _page.GetByTestId(locationDefine).Locator("visible=true").Last;
+                    }
+                    else
+                    {
+                        locator = _page.GetByTestId(locationDefine).Last;
+                    }
                     break;
-                case SearchType.CSS:
-                    locator = _page.Locator("css=" + locationDefine).Locator("visible=true").Last;
+                case SearchType.CSS:                    
+                    if (isVisible)
+                    {
+                        locator = _page.Locator("css=" + locationDefine).Locator("visible=true").Last;
+                    }
+                    else
+                    {
+                        locator = _page.Locator("css=" + locationDefine).Last;
+                    }
                     break;
                 default:
                     throw new NotImplementedException("Can't support ");
             }
-            await locator.IsVisibleAsync();
+            if (needWait) { await locator.IsVisibleAsync(); } 
+
             return locator;
         }
 

@@ -109,6 +109,31 @@ namespace SpecFlow_For_WoolWorths.StepDefinitions
             await trolleyPage.SetQuantityNumber(productName, quantityNumber);
         }
 
+        [Given(@"continue checkout in trolley")]
+        public async Task GivenContinueCheckoutInTrolley()
+        {
+            TrolleyPage trolleyPage = await homepage.GotoTrolley();
+            await trolleyPage.Checkout();
+            
+        }
+
+        [When(@"submit the payment transaction with the credit information in user settings\.")]
+        public async Task WhenSubmitThePaymentTransactionWithTheCreditInformationInUserSettings_()
+        {
+            PaymentPage paymentPage = homepage.GotoPayment();
+            await paymentPage.CompleteRandomBookSelection();
+            await paymentPage.CompleteTransaction();
+        }
+
+        [Then(@"The payment status is ""([^""]*)"" as it's fake credit card")]
+        public async Task ThenThePaymentStatusIsAsItsFakeCreditCard(string expectSucceeded)
+        {
+            Console.WriteLine("input expectSucceeded:" + expectSucceeded);
+            bool isExpectSucceeded = expectSucceeded.ToLower().Equals("true") ? true : false;
+            Console.WriteLine("isExpectSucceeded:" + isExpectSucceeded.ToString());
+            PaymentPage paymentPage = homepage.GotoPayment();
+            await paymentPage.AssertPaymentIsSucceeded(isExpectSucceeded);
+        }
 
 
     }

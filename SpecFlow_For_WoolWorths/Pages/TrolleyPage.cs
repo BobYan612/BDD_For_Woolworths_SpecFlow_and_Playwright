@@ -38,6 +38,8 @@ namespace PlaywrightTest.pages
         private string trolleyProductTotalPriceClassname = null!;
         private string trolleyProductChooseCheckBox = null!;
         private string trolleyProductQuantityConfirmButton = null!;
+        private string trolleyCheckoutButton = null!;
+        private string trolleyNextContinueCheckoutButton = null!;
 
         /// <summary>
         /// The method is used to read the definition from user configuration file.
@@ -61,6 +63,8 @@ namespace PlaywrightTest.pages
             trolleyProductTotalPriceClassname = userSettings.GetAppParameter("trolleypage.product_total_price_classname");
             trolleyProductChooseCheckBox = userSettings.GetAppParameter("trolleypage.product_choose_checkbox");
             trolleyProductQuantityConfirmButton = userSettings.GetAppParameter("trolleypage.product_add_confirm_button_text");
+            trolleyCheckoutButton = userSettings.GetAppParameter("trolleypage.checkout_button_text");
+            trolleyNextContinueCheckoutButton = userSettings.GetAppParameter("trolleypage.continue_checkout_text");
         }
 
         /// <summary>
@@ -310,6 +314,14 @@ namespace PlaywrightTest.pages
             await quantityLocator.FillAsync(quantityNumber);
             ILocator confirmButton = await LocateElementFromParent(cdxCardElement, trolleyProductQuantityConfirmButton, SearchType.Text);
             await confirmButton.ClickAsync();
+        }
+
+        public async Task Checkout()
+        {
+            ILocator checkoutButton = await LocateElement(trolleyCheckoutButton, SearchType.Text);
+            await checkoutButton.ClickAsync();
+            ILocator continueCheckoutButton = await LocateElement(trolleyNextContinueCheckoutButton, SearchType.Text);
+            await continueCheckoutButton.ClickAsync();
         }
     }
 }

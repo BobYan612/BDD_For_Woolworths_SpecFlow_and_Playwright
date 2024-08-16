@@ -166,6 +166,14 @@ namespace SpecFlow_For_WoolWorths.Pages
             return this;
         }
 
+        /// <summary>
+        /// The method is to create the payment page object
+        /// </summary>
+        /// <returns></returns>
+        public PaymentPage GotoPayment()
+        {
+            return new PaymentPage(_page);
+        }
 
     }
 }

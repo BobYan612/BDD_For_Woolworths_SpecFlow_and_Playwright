@@ -27,10 +27,15 @@ Microsoft.Extensions.Configuration
 The project has implememnted and verified 5 test scenarios beased on the Trolley feature (see [trolley.feature](SpecFlow_For_WoolWorths/Features/trolley.feature) in Features folder)
  - Scenario1: _Choose a product from browse to trolley_
  - Scenario2: _Choose a product from speical & offers to trolley parameters._
- - Scenario3: _Choose a product from low price to trolley_
+ - Scenario3: ~~Choose a product from low price to trolley~~  > The "Low Price" Menu has been removed in the latest Woolworths Page  
  - Scenario4: _Update the quantity in trolley_
  - Scenario5: _Remove one item in the trolley_  
-
+ - Scenario6: _Complete one transaction with a payment_   
+ 
+ **Test Report**
+ [report link](https://github.com/BobYan612/BDD_Test_Framework/test_result/LivingDoc.html)  
+ ![Report Example](test_result/test_report.JPG)  
+ 
 > [!TIP]  
 > Any suggestions or questions please contact biao.yan612@gmail.com
 

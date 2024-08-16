@@ -4,6 +4,10 @@
     "test_with_headless": "false",
     "browse_type": "Chromium",
     "username": "xxx",
-    "password": "xxx"
+    "password": "xxx",
+    "credit_card_number": "11111111111111",
+    "credit_card_cvv": "123",
+    "credit_card_exp_mm": "11",
+    "credit_card_exp_yy": "35"
   }
 }
